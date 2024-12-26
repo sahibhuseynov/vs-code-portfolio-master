@@ -1,0 +1,50 @@
+@import '../../sass/index.scss';
+
+
+.explorer{
+    width: 17vw;
+    background-color: #1f2428;
+    color:#e1e4e8;
+    border-right: 1px solid #161a1d;
+
+    h5{
+        font-size: 0.9rem;
+        font-weight: 300;
+        
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+    .explorer__down{
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        cursor: pointer;
+        user-select: none;
+
+    }
+    .explorer__content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        gap:2px;
+
+        .explorer__item{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding:3px 16px;
+
+            &:hover{
+                background-color: #405a6f;
+            }
+            img{
+                width: 18px;
+                height: 18px;
+                object-fit: cover;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}

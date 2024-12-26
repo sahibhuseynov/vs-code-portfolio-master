@@ -1,0 +1,85 @@
+@import '../../sass/index.scss';
+
+.terminal__container{
+    
+    background-color: #24292e;
+    
+    .terminal__header{
+        display: flex;
+        justify-content: space-between;
+        .left{
+            display: flex;
+            column-gap: 25px;
+            color: gray;
+            p{
+                cursor: pointer;
+                transition: 0.2s ease;
+                &:hover{
+                    color: #fff;
+                }    
+            }
+            :last-child{
+                color: #ffff;
+                border-bottom: 2px solid #fff;
+            }
+            }
+            .right{
+                display: flex;
+                gap: 8px;
+                span{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 2px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    &:hover{
+                        background: #696767;
+                    }
+                }
+            }
+            
+        }
+
+        .terminal__body{
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+          .left{
+            width: 100%;
+            border-right: 2px solid #696767;
+            textarea{
+                width: 100%;
+                height: 100%;
+                font-size: 20px;
+                color:rgb(187, 186, 186) ;
+                background: transparent;
+                border: none;
+                outline: none;
+                resize: none;
+                margin-top: 20px;
+            }
+          }
+          .right{
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            padding: 10px;
+            span{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+                
+                img{
+                    width: 20px;
+                    height: 20px;
+                    object-fit: cover;
+                    filter: invert(100%);
+                }
+            }
+          }
+        }
+    }
+    

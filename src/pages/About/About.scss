@@ -1,0 +1,28 @@
+@import '../../sass/index.scss';
+
+.about{
+    display: flex;
+height: 100%;
+.about__left{
+    flex: 1;
+    .text__title{
+        display: flex;
+        margin-bottom: 45px;
+        h1{
+            font-size: 65px;
+        }
+    }
+    .about__title{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        p{
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+}
+    .about__right{
+        flex: 1;
+    }
+}

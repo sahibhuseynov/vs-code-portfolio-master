@@ -1,0 +1,35 @@
+@import '../../sass/index.scss';
+
+.tabs{
+    background: #1f2428;
+display: flex;
+    .tabs__item{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: #1f2428;
+        color: #ececec;
+        border: 1px solid #24292e;
+        padding: 8px 20px;
+        cursor: pointer;
+
+        img{
+            width: 18px;
+            height: 18px;
+            object-fit: cover;
+        }
+        p{
+            font-size: 14px;
+        }
+        &:last-child{
+            display: none;
+        }
+        
+    }
+    .active{
+        border-top: 1px solid red;
+        &:last-child{
+            display: flex;
+        }
+    }
+}

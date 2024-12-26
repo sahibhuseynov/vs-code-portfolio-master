@@ -1,0 +1,42 @@
+@import '../../sass/index.scss';
+
+.sidebar{
+    width:5vw;
+    min-width: 40px;
+    background-color: #24292e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .sidebar__top{
+        .sidebar__item{
+            display: flex;
+            justify-content: center;
+            padding: 12px 4px;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: #1f2428;
+            }
+            
+        }
+        .active{
+            border-left: 2px solid red;
+        }
+    }
+    .sidebar__bottom{
+        display: flex;
+        flex-direction: column;
+
+        .sidebar__item{
+            display: flex;
+            justify-content: center;
+            padding: 12px 4px;
+            cursor: pointer;
+            
+            &:hover{
+                background-color:#1f2428;
+            }
+            
+        }
+    }
+}
