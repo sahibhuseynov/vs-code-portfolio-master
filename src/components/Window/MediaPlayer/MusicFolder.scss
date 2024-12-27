@@ -1,119 +1,80 @@
 .music-folder {
-  position: fixed;
-  top: 200px; /* Klasörün dikey konumu */
-  left: 100px; /* Klasörün yatay konumu */
+  
   cursor: pointer;
-
-  .folder-icon {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  
+  .modal-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    background-color: #0078d4;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px 10px 0 0;
+  }
 
-    img {
-      width: 54px;
-      height: 54px;
-      object-fit: cover;
-      transition: transform 0.2s, filter 0.2s;
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 70%; /* Yüksekliği ayarla */
+    overflow-y: auto; /* İçerik uzun olduğunda kaydırılabilir yap */
+    
+    .music-folder__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow-y: auto; /* Listeyi kaydırılabilir yap */
 
-      &:hover {
-        transform: scale(1.1);
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+      .music-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+
+        .item-icon {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
       }
     }
   }
 
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* Responsive genişlik */
-    max-width: 600px; /* Maksimum genişlik */
-    height: 70%; /* Yükseklik oranı */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    z-index: 999;
+  .close-btn {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
 
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #0078d4;
-      color: white;
-      padding: 10px 15px;
-      font-size: 16px;
-      font-weight: bold;
-      border-bottom: 1px solid #ccc;
-      border-radius: 8px 8px 0 0;
+  .close-btn:hover {
+    background-color: #005fa3;
+  }
+}
 
-      .modal-title {
-        flex-grow: 1;
-      }
+.music-player {
+  text-align: center;
+  padding: 20px;
+  max-height: 100%; /* Max yükseklik */
+  overflow-y: auto; /* İçerik uzun ise kaydırılabilir yap */
 
-      .window-controls {
-        display: flex;
-        align-items: center;
-
-        button {
-          background: none;
-          border: none;
-          color: white;
-          font-size: 18px;
-          cursor: pointer;
-          margin-left: 5px;
-
-          &:hover {
-            color: #ff4d4d;
-          }
-
-          &.close-btn {
-            font-size: 20px;
-          }
-        }
-      }
-    }
-
-    .modal-content {
-      flex-grow: 1;
-      padding: 15px;
-      overflow-y: auto;
-
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        .music-item {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-          padding: 5px;
-          border-bottom: 1px solid #eee;
-          cursor: pointer;
-
-          .item-icon {
-            margin-right: 10px;
-            font-size: 18px;
-          }
-
-          &:hover {
-            background-color: #f0f0f0;
-          }
-        }
-      }
-
-      .media-player {
-        padding: 20px;
-        text-align: center;
-
-        audio {
-          width: 100%;
-        }
-      }
-    }
+  audio {
+    width: 100%;
   }
 }

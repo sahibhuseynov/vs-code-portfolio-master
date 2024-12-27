@@ -12,21 +12,8 @@ const MusicFolder = ({ closeFolder }) => {
 
   return (
     <div className="music-folder">
-      {!currentMusic ? (
-        <>
-          <h2>Müzik Listesi</h2>
-          <ul className="music-folder__list">
-            {musicFiles.map((file) => (
-              <li key={file.id} onClick={() => setCurrentMusic(file)}>
-                🎵 {file.title}
-              </li>
-            ))}
-          </ul>
-          <button onClick={closeFolder} className="close-btn">
-            Klasörü Kapat
-          </button>
-        </>
-      ) : (
+      {/* Eğer currentMusic varsa müzik çalar, yoksa listeyi göster */}
+      {currentMusic ? (
         <div className="music-player">
           <h3>Çalan Şarkı: {currentMusic.title}</h3>
           <audio controls autoPlay>
@@ -35,6 +22,25 @@ const MusicFolder = ({ closeFolder }) => {
           </audio>
           <button onClick={() => setCurrentMusic(null)}>Müzik Listesine Dön</button>
         </div>
+      ) : (
+        <>
+          <h2>Müzik Listesi</h2>
+          <ul className="music-folder__list">
+            {musicFiles.map((file) => (
+              <li
+                key={file.id}
+                className="music-item"
+                onClick={() => setCurrentMusic(file)}
+              >
+                <span className="item-icon">🎵</span>
+                {file.title}
+              </li>
+            ))}
+          </ul>
+          <button onClick={closeFolder} className="close-btn">
+            Klasörü Kapat
+          </button>
+        </>
       )}
     </div>
   );

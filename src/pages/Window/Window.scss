@@ -1,6 +1,9 @@
 .window__screen {
   height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .background {
     position: absolute;
@@ -49,7 +52,7 @@
     z-index: 999;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden; /* Modal dışındaki overflow'u gizle */
 
     .modal-header {
       padding: 16px 20px;
@@ -60,6 +63,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 2px solid #e0e0e0;
 
       .modal-title {
         margin: 0;
@@ -81,10 +85,32 @@
 
     .modal-content {
       padding: 20px;
-      overflow-y: auto;
       color: #333;
       font-size: 14px;
       line-height: 1.6;
+      overflow-y: auto; /* İçeriğin kaydırılabilir olmasını sağla */
+      max-height: 70vh; /* Yüksekliği sınırlayarak kaydırılabilir yap */
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Liste elemanları arasına boşluk ekleyelim */
+    }
+
+    .music-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+
+      .item-icon {
+        margin-right: 10px;
+      }
     }
   }
 }
