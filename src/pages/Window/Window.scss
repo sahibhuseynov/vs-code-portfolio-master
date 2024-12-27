@@ -1,21 +1,90 @@
 .window__screen {
-    height: 100vh;
-    position: relative;
-    
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-  
-    img {
-      width: 100%;
-      height: calc(100vh - 40px); /* Resmin yüksekliğini %100 yapıyoruz, alt kısmı 40px'lik boşluk bırakıyoruz */
-      object-fit: cover;
-    } 
+  height: 100vh;
+  position: relative;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
-  
-  
+
+  img {
+    width: 100%;
+    height: calc(100vh - 40px);
+    object-fit: cover;
+  }
+
+  .window__icon {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    cursor: pointer;
+
+    img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      transition: transform 0.2s, filter 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+      }
+    }
+  }
+
+  .window__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .modal-header {
+      padding: 16px 20px;
+      background: #0078d4;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .modal-title {
+        margin: 0;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #ff4d4d;
+        }
+      }
+    }
+
+    .modal-content {
+      padding: 20px;
+      overflow-y: auto;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+}
